@@ -5,16 +5,16 @@
 <table class="table">
   <thead>
   <tr>
-    <td>Username</td>
-    <td>Password</td>
+    <td>User ID</td>
+    <td>Token</td>
     <td>Created At</td>
   </tr>
   </thead>
   <tbody>
-  <% @users.each do |item| %>
+  <% @list.each do |item| %>
   <tr>
-    <td><%= item.username %></td>
-    <td><%= item.password %></td>
+    <td><%= item.resource_owner_id %></td>
+    <td><%= item.token %></td>
     <td><%= item.created_at %></td>
   </tr>
   <% end %>

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 'welcome#login'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -54,10 +57,14 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get ':controller(/:action(/:id(.:format)))'
-  post ':controller(/:action(/:id(.:format)))'
+#  get ':controller(/:action(/:id(.:format)))'
+#  post ':controller(/:action(/:id(.:format)))'
 
-  #get 'users' => 'users#index'
+#  get 'users/login', to: 'users#login'
+#  post 'users/login' => 'users#login'
+
+#  match 'users/login' => 'users#login', via: [:get, :post]
+  get 'application/list_oauth', to: 'application#list_oauth'
 
 end
 
